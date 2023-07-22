@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-// time complexityO(m * n)
+// time complexity: O(m * n)
 // space complexity: O(1)
 
 public class prefixSum {
