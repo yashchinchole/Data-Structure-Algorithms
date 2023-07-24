@@ -1,5 +1,5 @@
 import java.util.*;
-
+    
 public class BinarySearch {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -26,15 +26,17 @@ public class BinarySearch {
         int l = 0;
         int r = arr.length - 1;
         int m = -1;
-        while (l < r) {
-            m = (l + r) / 2;
-            if (arr[m] >= target)
-                r = m;
-            else
-                l = m;
+        while (l <= r) {
+            // m = (l + r) / 2;
+            m = l + (r - l) / 2;
+            // to stop overflow
             if (arr[m] == target)
                 return m;
+            else if (arr[m] > target)
+                r = m - 1;
+            else
+                l = m + 1;
         }
-        return m;
+        return -1;
     }
 }
